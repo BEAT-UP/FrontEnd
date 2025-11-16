@@ -10,12 +10,12 @@ import {
     RefreshControl,
     StyleSheet
 } from "react-native";
-import { useAppStore } from "../store/useAppStore";
+import { useConcertStore } from "../../../store/concerts/useConcertStore";
 import ConcertCard from "../components/Concertcard";
 
 
 const HomeScreen = ({naviagation}) => {
-    const {concerts, isLoading, error, loadConcerts} = useAppStore();
+    const {concerts, isLoading, error, loadConcerts} = useConcertStore();
 
     // 검색 상태
     const [searchQuery, setSearchQuery] = useState('');

@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-export const useAppStore = create((set, get) => ({
+export const useConcertStore = create((set, get) => ({
     // 선택된 공연 정보
     selectedConcert: null,
     setSelectedConcert: (concert) => {
@@ -24,7 +24,7 @@ export const useAppStore = create((set, get) => ({
         setError(null);
 
         try{
-            const {concertService} = await import('../services/concertService');
+            const {concertService} = await import('../../features/concerts/services/concertService');
             const concerts = await concertService.getConcerts(params);
             setConcerts(concerts);
         }catch(error){
